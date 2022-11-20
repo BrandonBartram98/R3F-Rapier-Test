@@ -12,7 +12,7 @@ export default function Scene({ children, ...props }) {
   // Everything defined in here will persist between route changes, only children are swapped
   return (
     <>
-      <Canvas orthographic shadows dpr={[1, 2]} camera={{ zoom: 70, position: [-14, 14, 10], fov: 100 }} {...props}>
+      <Canvas orthographic shadows dpr={[1, 2]} camera={{ zoom: 90, position: [-14, 14, 10], fov: 100 }} {...props}>
         <EffectComposer>
           <Noise opacity={0.1} />
         </EffectComposer>

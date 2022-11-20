@@ -9,7 +9,8 @@ export default function SocialBar(props) {
               before:hover:scale-x-100 before:scale-x-0 before:origin-top-left
               before:transition before:ease-in-out before:duration-300"
             href='https://github.com/BrandonBartram98'
-            target='_blank'>
+            target='_blank'
+            rel='noreferrer'>
             github
           </a>
         </li>
@@ -20,7 +21,8 @@ export default function SocialBar(props) {
               before:hover:scale-x-100 before:scale-x-0 before:origin-top-left
               before:transition before:ease-in-out before:duration-300"
             href='https://twitter.com/Brandon_Bartram'
-            target='_blank'>
+            target='_blank'
+            rel='noreferrer'>
             twitter
           </a>
         </li>
@@ -31,7 +33,8 @@ export default function SocialBar(props) {
               before:hover:scale-x-100 before:scale-x-0 before:origin-top-left
               before:transition before:ease-in-out before:duration-300"
             href='https://www.linkedin.com/in/brandonbartram/'
-            target='_blank'>
+            target='_blank'
+            rel='noreferrer'>
             linkedin
           </a>
         </li>

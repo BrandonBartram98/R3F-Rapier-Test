@@ -1,3 +1,6 @@
+@import url("https://rsms.me/inter/inter.css");
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,4 +19,39 @@
     padding: 0;
     overflow: hidden;
   }
+
+  .buttonSideFill span:first-child{
+  transform: translateX(-101%);
+  }
+  .buttonSideFill:hover span{
+    transform: translateX(0)
+  }
+  
+
+  .dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  }
+  .dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #18181B;
+    border-color: #18181B transparent #18181B transparent;
+    animation: dual-ring 6s linear infinite;
+  }
+  @keyframes dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+	
 }
+

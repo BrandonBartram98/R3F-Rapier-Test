@@ -20,6 +20,7 @@ export default function MainText() {
       <RigidBody type='kinematicPosition' colliders={false} canSleep>
         <Text3D
           castShadow
+          curveSegments={2}
           position={[0.5, 0, -3]}
           size={0.5}
           rotation={[-Math.PI / 2, 0, -Math.PI / 2]}
@@ -36,6 +37,7 @@ export default function MainText() {
       <RigidBody type='kinematicPosition' colliders={false} canSleep>
         <Text3D
           castShadow
+          curveSegments={2}
           position={[-0.75, 0, -3]}
           rotation={[-Math.PI / 2, 0, -Math.PI / 2]}
           letterSpacing={-0.05}

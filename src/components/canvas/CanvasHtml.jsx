@@ -18,17 +18,17 @@ export default function CanvasHtml() {
   return (
     <>
       {/* Top Arrow */}
-      <mesh rotation={[-Math.PI / 2, 0, -Math.PI / 2]} position-x={8}>
+      {/* <mesh rotation={[-Math.PI / 2, 0, -Math.PI / 2]} position-x={8}>
         <Html transform>
           <div className='relative top-0 left-0 dual-ring opacity-40'>
             <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'></div>
           </div>
           <h1 className='text-center text-xs font-bold tracking-tighter opacity-40 text-zinc-900'>projects</h1>
         </Html>
-      </mesh>
+      </mesh> */}
       {/* Technologies */}
       <mesh rotation={[-Math.PI / 2, 0, -Math.PI / 2]} position-x={-1.5}>
-        <Html transform prepend zIndexRange={[0, 10]}>
+        <Html transform prepend zIndexRange={[1, 0]}>
           <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8'>
             <ul className='flex items-center justify-center gap-2'>
               <a href='https://www.javascript.com/' rel='noreferrer' target='_blank'>

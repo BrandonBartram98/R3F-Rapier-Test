@@ -2,7 +2,7 @@ import { MathUtils } from 'three'
 import { useState, useRef, useEffect } from 'react'
 import { Instance, useCursor, useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
-import { InstancedRigidBodies, Physics } from '@react-three/rapier'
+import { InstancedRigidBodies, Physics, RigidBody } from '@react-three/rapier'
 
 export function Magnet(props) {
   const { nodes } = useGLTF('/Magnet.glb')
@@ -33,12 +33,14 @@ export function Magnet(props) {
       onPointerOver={() => hover(true)}
       onPointerOut={() => hover(false)}
       dispose={null}>
-      <mesh castShadow receiveShadow geometry={nodes.Circle002.geometry}>
-        <meshBasicMaterial color={'white'} />
-      </mesh>
-      <mesh castShadow receiveShadow geometry={nodes.Circle002_1.geometry}>
-        <meshStandardMaterial ref={magnetMat} roughness={1.0} color={props.isMagnetised ? 'red' : 'gray'} />
-      </mesh>
+      <RigidBody type='kinematicPosition'>
+        <mesh castShadow receiveShadow geometry={nodes.Circle002.geometry}>
+          <meshBasicMaterial color={'white'} />
+        </mesh>
+        <mesh castShadow receiveShadow geometry={nodes.Circle002_1.geometry}>
+          <meshStandardMaterial ref={magnetMat} roughness={1.0} color={props.isMagnetised ? 'red' : 'gray'} />
+        </mesh>
+      </RigidBody>
     </group>
   )
 }

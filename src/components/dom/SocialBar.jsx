@@ -1,7 +1,7 @@
 export default function SocialBar(props) {
   return (
     <div className='absolute right-0 bottom-0 p-11 inline-flex items-center'>
-      <ul className='font-light text-sm inline-flex gap-2 text-right justify-end basis-1/3'>
+      <ul className='font-light text-xs inline-flex gap-2 text-right justify-end basis-1/3'>
         <li>
           <a
             className="relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] 

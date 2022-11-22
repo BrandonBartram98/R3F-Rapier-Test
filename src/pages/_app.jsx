@@ -5,7 +5,6 @@ import Layout from '@/components/dom/Layout'
 import '@/styles/index.css'
 import Overlay from '@/components/dom/Overlay'
 import SocialBar from '@/components/dom/SocialBar'
-import { Perf } from 'r3f-perf'
 
 const Scene = dynamic(() => import('@/components/canvas/Scene'), { ssr: true })
 

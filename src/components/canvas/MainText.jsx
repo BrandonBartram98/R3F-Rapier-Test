@@ -16,40 +16,38 @@ export default function MainText() {
   })
 
   return (
-    <Center scale={[1, 0.8, 1]} position-y={0.25}>
+    <>
       <RigidBody type='kinematicPosition' colliders={false} canSleep>
         <Text3D
           castShadow
-          bevelEnabled
-          position-x={1.25}
+          position={[0.5, 0, -3]}
+          size={0.5}
           rotation={[-Math.PI / 2, 0, -Math.PI / 2]}
-          scale={0.5}
           letterSpacing={-0.05}
-          height={0.5}
+          height={0.35}
           font={'./Inter_Regular.json'}>
           {`Creative`}
           <meshBasicMaterial>
             <GradientTexture stops={[0, 1]} colors={['hotpink', 'white']} />
           </meshBasicMaterial>
         </Text3D>
-        <CuboidCollider position={[1.5, 0, 1.3]} args={[0.2, 0.3, 1.25]} />
+        <CuboidCollider position={[0.75, 0.1, -1.75]} args={[0.2, 0.3, 1.25]} />
       </RigidBody>
       <RigidBody type='kinematicPosition' colliders={false} canSleep>
         <Text3D
           castShadow
-          bevelEnabled
+          position={[-0.75, 0, -3]}
           rotation={[-Math.PI / 2, 0, -Math.PI / 2]}
-          scale={1}
           letterSpacing={-0.05}
-          height={0.25}
+          height={0.4}
           font={'./Inter_Regular.json'}>
           {`Developer`}
           <meshBasicMaterial>
             <GradientTexture stops={[0, 1]} colors={['hotpink', 'white']} />
           </meshBasicMaterial>
         </Text3D>
-        <CuboidCollider position={[0.5, 0, 3]} args={[0.5, 0.32, 3]} />
+        <CuboidCollider position={[-0.25, 0.125, 0]} args={[0.5, 0.32, 3]} />
       </RigidBody>
-    </Center>
+    </>
   )
 }

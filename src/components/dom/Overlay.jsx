@@ -33,7 +33,7 @@ export default function Overlay(props) {
                   ? 'absolute transition-all duration-300 ease-in-out inset-0 bg-white'
                   : 'absolute transition-all duration-300 ease-in-out inset-0 bg-black'
               }></span>
-            <span class='absolute inset-0 flex justify-center items-center font-bold'>Toggle Perf</span>
+            <span className='absolute inset-0 flex justify-center items-center font-bold'>Toggle Perf</span>
           </button>
         </div>
         <p className='text-xl font-bold tracking-tighter font-antonio basis-1/3 hidden sm:block text-center'></p>

@@ -4,7 +4,7 @@ import { Center, GradientTexture, Html, Text3D, useCursor } from '@react-three/d
 import { useFrame } from '@react-three/fiber'
 import { RigidBody } from '@react-three/rapier'
 
-export default function NavigationArrows() {
+export default function CanvasHtml() {
   const [hovered, hover] = useState(false)
   useCursor(hovered)
 

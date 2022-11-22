@@ -2,20 +2,18 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Preload } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
 import { Physics, RigidBody, CuboidCollider, Debug } from '@react-three/rapier'
-import { EffectComposer, Noise } from '@react-three/postprocessing'
+import { EffectComposer } from '@react-three/postprocessing'
 import MainText from './MainText'
 import { Suspense } from 'react'
-import NavigationArrows from './NavigationArrows'
+import CanvasHtml from './CanvasHtml'
 import Balls from './Balls'
 
 export default function Scene({ children, ...props }) {
   // Everything defined in here will persist between route changes, only children are swapped
   return (
     <>
-      <Canvas orthographic shadows dpr={[1, 2]} camera={{ zoom: 90, position: [-14, 14, 10], fov: 100 }} {...props}>
-        <EffectComposer>
-          <Noise opacity={0.1} />
-        </EffectComposer>
+      <Canvas orthographic shadows dpr={[1, 2]} camera={{ zoom: 80, position: [-14, 14, 10], fov: 100 }} {...props}>
+        {/* <OrbitControls /> */}
         <ambientLight intensity={0.4} />
         <directionalLight
           position={[10, 20, 20]}
@@ -44,7 +42,7 @@ export default function Scene({ children, ...props }) {
             <shadowMaterial transparent opacity={0.1} />
           </mesh>
           <Balls />
-          <NavigationArrows />
+          <CanvasHtml />
           {props.isPerfActive ? <Perf colorBlind /> : null}
           {props.isPerfActive ? <Debug /> : null}
         </Physics>

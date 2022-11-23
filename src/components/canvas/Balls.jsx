@@ -45,12 +45,12 @@ export function Magnet(props) {
   )
 }
 
-export default function Balls({ count = 30, rand = MathUtils.randFloatSpread }) {
+export default function Balls({ count = 40, rand = MathUtils.randFloatSpread }) {
   const positions = Array.from({ length: count }, (_, i) => [rand(16), 14 + i / 2, rand(16)])
   const rotations = Array.from({ length: count }, () => [Math.random(), Math.random(), Math.random()])
 
   const popSound = new Audio('./popSound.wav')
-  popSound.volume = 0.5
+  popSound.volume = 0.4
 
   const [isMagnetised, setIsMagnetised] = useState(false)
 
@@ -65,8 +65,8 @@ export default function Balls({ count = 30, rand = MathUtils.randFloatSpread }) 
 
   const magnetToggleSoundOn = new Audio('./magnetToggleSoundOn.wav')
   const magnetToggleSoundOff = new Audio('./magnetToggleSoundOff.wav')
-  magnetToggleSoundOn.volume = 0.5
-  magnetToggleSoundOff.volume = 0.5
+  magnetToggleSoundOn.volume = 0.4
+  magnetToggleSoundOff.volume = 0.4
 
   const instancedApi = useRef(null)
 
@@ -92,14 +92,15 @@ export default function Balls({ count = 30, rand = MathUtils.randFloatSpread }) 
       <Magnet isMagnetised={isMagnetised} onClick={toggleMagnet} />
       <InstancedRigidBodies
         ref={instancedApi}
+        colliders={'hull'}
         positions={positions}
         rotations={rotations}
         restitution={0.5}
         angularDamping={0.5}
-        mass={0.1}
+        mass={0.15}
         canSleep>
         <instancedMesh onClick={handleClickInstance} args={[undefined, undefined, count]} dispose={null} castShadow>
-          <boxGeometry args={[0.5, 0.5, 0.5]} />
+          <octahedronGeometry args={[0.3, 0, 0]} />
           <meshStandardMaterial transparent opacity={0.8} roughness={0} color={'hotpink'} />
         </instancedMesh>
       </InstancedRigidBodies>

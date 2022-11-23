@@ -7,8 +7,8 @@ export default function Overlay(props) {
       </div>
       <div className='w-full inline-flex font-inter align-center justify-between mt-12'>
         <div className='tracking text-xs'>
-          <p className='font-bold'>Page Title</p>
-          <p className=''>Subtitle</p>
+          <p className='font-bold'>Home</p>
+          <p className=''>Main Portfolio</p>
           <b>—</b>
         </div>
         {/* <p className='text-xs font-inter font-bold rotate-90 origin-bottom hidden sm:block'>

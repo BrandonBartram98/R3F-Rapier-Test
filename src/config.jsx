@@ -1,8 +1,8 @@
 import Head from 'next/head'
 
 const titleDefault = 'Brandon Portfolio'
-const url = 'https://react-three-next.vercel.app/'
-const description = 'The easiest and fastest way to create a 3D website using React Three Fiber and NextJS'
+const url = 'https://portfolio-blush-theta-76.vercel.app/'
+const description = 'Personal site, built with React, R3F, NextJS and TailwindCSS'
 const author = 'Brandon Bartram'
 
 export default function Header({ title = titleDefault }) {

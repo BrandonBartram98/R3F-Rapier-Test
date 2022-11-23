@@ -16,5 +16,5 @@ export default function Page(props) {
 Page.canvas = (props) => <> </>
 
 export async function getStaticProps() {
-  return { props: { title: 'Index' } }
+  return { props: { title: 'Brandon Bartram' } }
 }

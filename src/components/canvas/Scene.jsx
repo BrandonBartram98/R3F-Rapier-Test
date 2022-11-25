@@ -26,7 +26,7 @@ export default function Scene({ children, ...props }) {
         <Suspense>
           <CanvasHtml />
           <Lights />
-          <gridHelper args={[30, 20, '#d6b4c7', '#d6b4c7']} />
+          {/* <gridHelper args={[30, 20, '#d6b4c7', '#d6b4c7']} /> */}
           <Physics gravity={[0, -10, 0]}>
             {children}
             <Player />

@@ -1,8 +1,8 @@
 import { MathUtils } from 'three'
-import { useState, useRef, useEffect } from 'react'
-import { Instance, useCursor, useGLTF } from '@react-three/drei'
+import { useState, useRef } from 'react'
+import { useCursor, useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
-import { InstancedRigidBodies, Physics, RigidBody } from '@react-three/rapier'
+import { InstancedRigidBodies, RigidBody, Attractor } from '@react-three/rapier'
 
 export function Magnet(props) {
   const { nodes } = useGLTF('/Magnet.glb')
@@ -50,7 +50,7 @@ export default function Balls({ count = 40, rand = MathUtils.randFloatSpread }) 
   const rotations = Array.from({ length: count }, () => [Math.random(), Math.random(), Math.random()])
 
   const popSound = new Audio('./popSound.wav')
-  popSound.volume = 0.4
+  popSound.volume = 0.2
 
   const [isMagnetised, setIsMagnetised] = useState(false)
 
@@ -65,20 +65,20 @@ export default function Balls({ count = 40, rand = MathUtils.randFloatSpread }) 
 
   const magnetToggleSoundOn = new Audio('./magnetToggleSoundOn.wav')
   const magnetToggleSoundOff = new Audio('./magnetToggleSoundOff.wav')
-  magnetToggleSoundOn.volume = 0.4
-  magnetToggleSoundOff.volume = 0.4
+  magnetToggleSoundOn.volume = 0.3
+  magnetToggleSoundOff.volume = 0.3
 
   const instancedApi = useRef(null)
 
-  useFrame(() => {
-    if (isMagnetised) {
-      instancedApi.current.forEach((body) => {
-        const p = body.translation()
-        p.normalize().multiplyScalar(-0.03)
-        body.applyImpulse(p)
-      })
-    }
-  })
+  // useFrame(() => {
+  //   // if (isMagnetised) {
+  //   //   instancedApi.current.forEach((body) => {
+  //   //     const p = body.translation()
+  //   //     p.normalize().multiplyScalar(-0.03)
+  //   //     body.applyImpulse(p)
+  //   //   })
+  //   // }
+  // })
 
   const handleClickInstance = (event) => {
     if (instancedApi.current) {
@@ -90,6 +90,7 @@ export default function Balls({ count = 40, rand = MathUtils.randFloatSpread }) 
   return (
     <>
       <Magnet isMagnetised={isMagnetised} onClick={toggleMagnet} />
+      {isMagnetised ? <Attractor range={30} strength={0.1} position={[0, 2, -6]} /> : null}
       <InstancedRigidBodies
         ref={instancedApi}
         colliders={'hull'}

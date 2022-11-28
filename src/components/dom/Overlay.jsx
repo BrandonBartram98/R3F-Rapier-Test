@@ -1,4 +1,8 @@
-export default function Overlay(props) {
+export default function Overlay({ setPerfActive, isPerfActive }) {
+  const togglePerfActive = () => {
+    setPerfActive((current) => !current)
+  }
+
   return (
     <div className='absolute w-full h-full top-0 left-0 p-10 inline-flex flex-col'>
       <div className='w-full inline-flex align-center justify-between gap-10'>
@@ -21,15 +25,15 @@ export default function Overlay(props) {
       <div className='w-full inline-flex items-center'>
         <div className='tracking text-xs basis-1/3'>
           <button
-            onClick={props.handlePerfClick}
+            onClick={togglePerfActive}
             className={
-              props.isPerfActive
+              isPerfActive
                 ? 'border-2 hover:text-zinc-900 text-white bg-zinc-900 border-zinc-900 px-10 py-4 transition-all duration-300 ease-in-out buttonSideFill relative overflow-hidden'
                 : 'border-2 hover:text-white border-zinc-900 px-10 py-4 transition-all duration-300 ease-in-out buttonSideFill relative overflow-hidden'
             }>
             <span
               className={
-                props.isPerfActive
+                isPerfActive
                   ? 'absolute transition-all duration-300 ease-in-out inset-0 bg-white'
                   : 'absolute transition-all duration-300 ease-in-out inset-0 bg-black'
               }></span>

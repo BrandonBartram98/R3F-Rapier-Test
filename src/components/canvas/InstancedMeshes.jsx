@@ -27,15 +27,15 @@ export function Magnet(props) {
     <group
       {...props}
       ref={magnetMesh}
-      position-z={-6}
-      rotation={[0, 0, 0]}
+      position-x={3}
+      rotation={[0, Math.PI / 2, 0]}
       scale={0.5}
       onPointerOver={() => hover(true)}
       onPointerOut={() => hover(false)}
       dispose={null}>
       <RigidBody type='kinematicPosition'>
         <mesh castShadow receiveShadow geometry={nodes.Circle002.geometry}>
-          <meshBasicMaterial color={'white'} />
+          <meshStandardMaterial color={'white'} />
         </mesh>
         <mesh castShadow receiveShadow geometry={nodes.Circle002_1.geometry}>
           <meshStandardMaterial ref={magnetMat} roughness={1.0} color={props.isMagnetised ? 'red' : 'gray'} />
@@ -45,7 +45,7 @@ export function Magnet(props) {
   )
 }
 
-export default function Balls({ count = 40, rand = MathUtils.randFloatSpread }) {
+export default function InstancedMeshes({ count = 40, rand = MathUtils.randFloatSpread }) {
   const positions = Array.from({ length: count }, (_, i) => [rand(16), 14 + i / 2, rand(16)])
   const rotations = Array.from({ length: count }, () => [Math.random(), Math.random(), Math.random()])
 
@@ -70,16 +70,6 @@ export default function Balls({ count = 40, rand = MathUtils.randFloatSpread }) 
 
   const instancedApi = useRef(null)
 
-  // useFrame(() => {
-  //   // if (isMagnetised) {
-  //   //   instancedApi.current.forEach((body) => {
-  //   //     const p = body.translation()
-  //   //     p.normalize().multiplyScalar(-0.03)
-  //   //     body.applyImpulse(p)
-  //   //   })
-  //   // }
-  // })
-
   const handleClickInstance = (event) => {
     if (instancedApi.current) {
       popSound.play()
@@ -90,7 +80,7 @@ export default function Balls({ count = 40, rand = MathUtils.randFloatSpread }) 
   return (
     <>
       <Magnet isMagnetised={isMagnetised} onClick={toggleMagnet} />
-      {isMagnetised ? <Attractor range={30} strength={0.1} position={[0, 2, -6]} /> : null}
+      {isMagnetised ? <Attractor range={30} strength={0.1} position={[3, 2, 0]} /> : null}
       <InstancedRigidBodies
         ref={instancedApi}
         colliders={'hull'}

@@ -20,7 +20,7 @@ export default function SocialBar(props) {
               before:bottom-0 before:left-0 before:bg-black
               before:hover:scale-x-100 before:scale-x-0 before:origin-top-left
               before:transition before:ease-in-out before:duration-300"
-            href='https://twitter.com/Brandon_Bartram'
+            href='https://twitter.com/barty_dev'
             target='_blank'
             rel='noreferrer'>
             twitter

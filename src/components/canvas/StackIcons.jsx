@@ -1,10 +1,8 @@
-import { MathUtils } from 'three'
-import { useState, useRef, useEffect } from 'react'
-import { Center, GradientTexture, Html, Text3D, useCursor } from '@react-three/drei'
+import { useState } from 'react'
+import { Html, useCursor } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
-import { RigidBody } from '@react-three/rapier'
 
-export default function CanvasHtml() {
+export default function StackIcons() {
   const [hovered, hover] = useState(false)
   useCursor(hovered)
 
@@ -91,8 +89,6 @@ export default function CanvasHtml() {
                     d='M85.3 76.1C81.1 83.5 73.1 88.5 64 88.5c-13.5 0-24.5-11-24.5-24.5s11-24.5 24.5-24.5c9.1 0 17.1 5 21.3 12.5l13-7.5c-6.8-11.9-19.6-20-34.3-20-21.8 0-39.5 17.7-39.5 39.5s17.7 39.5 39.5 39.5c14.6 0 27.4-8 34.2-19.8l-12.9-7.6zM97 66.2l.9-4.3h-4.2v-4.7h5.1L100 51h4.9l-1.2 6.1h3.8l1.2-6.1h4.8l-1.2 6.1h2.4v4.7h-3.3l-.9 4.3h4.2v4.7h-5.1l-1.2 6h-4.9l1.2-6h-3.8l-1.2 6h-4.8l1.2-6h-2.4v-4.7H97zm4.8 0h3.8l.9-4.3h-3.8l-.9 4.3z'></path>
                 </svg>
               </li>
-
-              <p className='pl-4'></p>
 
               <li>
                 <svg className='w-5 hover:scale-150 transition-all duration-300' viewBox='0 0 128 128'>

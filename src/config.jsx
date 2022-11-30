@@ -34,7 +34,7 @@ export default function Header({ title = titleDefault }) {
       <meta name='og:image' content={'/icons/share.png'} />
       <meta name='og:site_name' content={title} />
       <meta name='og:description' content={description} />
-
+      <link rel='shortcut icon' href='#' />
       <link rel='apple-touch-icon' href='/icons/apple-touch-icon.png' />
       <link rel='apple-touch-icon' sizes='16x16' href='/icons/favicon-16x16.png' />
       <link rel='apple-touch-icon' sizes='32x32' href='/icons/favicon-32x32.png' />
@@ -55,7 +55,7 @@ export default function Header({ title = titleDefault }) {
         documentation: https://dev.twitter.com/cards/getting-started
         Be sure validate your Twitter card markup on the documentation site. */}
       <meta name='twitter:card' content='summary' />
-      <meta name='twitter:site' content='@onirenaud' />
+      <meta name='twitter:site' content='@barty_dev' />
     </Head>
   )
 }

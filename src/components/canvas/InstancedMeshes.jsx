@@ -99,4 +99,4 @@ export default function InstancedMeshes({ count = 40, rand = MathUtils.randFloat
   )
 }
 
-useGLTF.preload('/Magnet.glb')
+//useGLTF.preload('/Magnet.glb')

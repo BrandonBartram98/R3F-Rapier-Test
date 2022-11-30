@@ -3,9 +3,9 @@ import dynamic from 'next/dynamic'
 import Header from '@/config'
 import Layout from '@/components/dom/Layout'
 import '@/styles/index.css'
-import CustomLoader from '@/components/dom/CustomLoader'
 
 const Scene = dynamic(() => import('@/components/canvas/Scene'), { ssr: true })
+const CustomLoader = dynamic(() => import('@/components/dom/CustomLoader'), { ssr: true })
 
 export default function App({ Component, pageProps = { title: 'index' } }) {
   const ref = useRef()
@@ -14,9 +14,9 @@ export default function App({ Component, pageProps = { title: 'index' } }) {
   return (
     <>
       <Header title={pageProps.title} />
-      <Layout isPerfActive={isPerfActive} setPerfActive={setPerfActive} eventSource={ref} ref={ref}>
-        {/* <CustomLoader /> */}
+      <CustomLoader />
 
+      <Layout isPerfActive={isPerfActive} setPerfActive={setPerfActive} eventSource={ref} ref={ref}>
         {Component?.canvas && (
           <Scene isPerfActive={isPerfActive} className='pointer-events-none' eventSource={ref} eventPrefix='client'>
             {Component.canvas(pageProps)}

@@ -7,7 +7,7 @@ export default function Overlay({ setPerfActive, isPerfActive }) {
     <div className='absolute w-full h-full top-0 left-0 p-10 inline-flex flex-col'>
       <div className='w-full inline-flex align-center justify-between gap-10'>
         <p className='h-10 text-3xl font-bold tracking-tighter font-antonio'>BRANDON</p>
-        <p className='h-10 text-sm text-right font-bold pt-1 pointer-events-none'></p>
+        <p className='h-10 text-lg text-right font-bold pointer-events-none'>🍔</p>
       </div>
       <div className='w-full inline-flex font-inter align-center justify-between mt-12'>
         <div className='tracking text-xs'>
